@@ -79,3 +79,5 @@ Delete all tasks at once using the -deleteAll flag:
 ```bash
 ./todo -deleteAll
 ```
+
+![Screenshot of Task Vader CLI](assets/demo-screenshot.png)
