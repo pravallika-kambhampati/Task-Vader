@@ -1,5 +1,7 @@
 # Task Vader - CLI Tool built w Go
 
+![Screenshot of Task Vader CLI](assets/demo-screenshot.png)
+
 A simple yet powerful command-line interface (CLI) tool to manage your daily tasks. This tool allows you to add, complete, delete, and list your to-dos in a lightweight and efficient manner.
 
 ## Features
@@ -79,5 +81,3 @@ Delete all tasks at once using the -deleteAll flag:
 ```bash
 ./todo -deleteAll
 ```
-
-![Screenshot of Task Vader CLI](assets/demo-screenshot.png)
