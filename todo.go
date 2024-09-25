@@ -58,6 +58,16 @@ func (t *Todos) Delete(index int) error {
 	return nil
 }
 
+func (t *Todos) DeleteAll() error {
+	if len(*t) == 0 {
+		return errors.New("no todos to delete")
+	}
+
+	*t = []item{} // Clear all todos
+
+	return nil
+}
+
 func (t *Todos) Load(filename string) error {
 	file, err := ioutil.ReadFile(filename)
 

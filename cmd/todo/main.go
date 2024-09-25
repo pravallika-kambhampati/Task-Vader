@@ -20,6 +20,7 @@ func main() {
 	add := flag.Bool("add", false, "add a new task")
 	complete := flag.Int("complete", 0, "mark a todo as completed")
 	del := flag.Int("del", 0, "delete a todo")
+	deleteAll := flag.Bool("deleteAll", false, "delete all todos")
 	list := flag.Bool("list", false, "list all todos")
 
 	flag.Parse()
@@ -74,6 +75,17 @@ func main() {
 
 		err = todos.Store(todoFile)
 
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err.Error())
+			os.Exit(1)
+		}
+	case *deleteAll: // new case for deleteAll
+		err := todos.DeleteAll()
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err.Error())
+			os.Exit(1)
+		}
+		err = todos.Store(todoFile)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err.Error())
 			os.Exit(1)
